@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBBA Live Stats Tracking</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/stats.css">
+</head>
+<body>
+    <div class="stats-container">
+        <!-- Header -->
+        <header class="stats-header">
+            <h1>Live Stats Tracking</h1>
+            <div class="header-controls">
+                <select id="teamFilter" class="form-control">
+                    <option value="home">Home Team</option>
+                    <option value="away">Away Team</option>
+                </select>
+                <input type="text" id="playerSearch" class="form-control" placeholder="Search player...">
+                <button class="btn btn-secondary" id="backBtn">← Back</button>
+            </div>
+        </header>
+
+        <!-- Stats Tracking Interface -->
+        <main class="stats-main">
+            <!-- Player Selection & Quick Stats -->
+            <section class="player-section">
+                <h2>Select Player</h2>
+                <div class="player-list" id="playerList">
+                    <!-- Players will be populated here -->
+                </div>
+            </section>
+
+            <!-- Live Stats Entry -->
+            <section class="stats-entry-section">
+                <h2>Quick Stats Entry</h2>
+                <div class="player-display" id="playerDisplay">
+                    <img id="playerDisplayImage" src="" alt="Player">
+                    <div class="player-display-info">
+                        <h3 id="playerDisplayName">Select a player</h3>
+                        <p id="playerDisplayNumber">#00 - Position</p>
+                    </div>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="quick-actions">
+                    <button class="quick-btn" data-action="made-2">Made 2</button>
+                    <button class="quick-btn" data-action="made-3">Made 3</button>
+                    <button class="quick-btn" data-action="missed-2">Missed 2</button>
+                    <button class="quick-btn" data-action="missed-3">Missed 3</button>
+                    <button class="quick-btn" data-action="made-ft">Made FT</button>
+                    <button class="quick-btn" data-action="missed-ft">Missed FT</button>
+                    <button class="quick-btn" data-action="rebound">Rebound</button>
+                    <button class="quick-btn" data-action="assist">Assist</button>
+                    <button class="quick-btn" data-action="steal">Steal</button>
+                    <button class="quick-btn" data-action="block">Block</button>
+                    <button class="quick-btn" data-action="turnover">Turnover</button>
+                    <button class="quick-btn" data-action="foul">Foul</button>
+                </div>
+
+                <!-- Undo/Redo -->
+                <div class="history-controls">
+                    <button class="btn btn-secondary" id="undoBtn">↶ Undo</button>
+                    <button class="btn btn-secondary" id="redoBtn">↷ Redo</button>
+                </div>
+            </section>
+
+            <!-- Current Player Stats -->
+            <section class="current-stats-section">
+                <h2>Current Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-label">MIN</span>
+                        <span class="stat-value" id="currentMin">0:00</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">PTS</span>
+                        <span class="stat-value" id="currentPts">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">FG</span>
+                        <span class="stat-value" id="currentFG">0/0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">3P</span>
+                        <span class="stat-value" id="current3P">0/0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">FT</span>
+                        <span class="stat-value" id="currentFT">0/0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">REB</span>
+                        <span class="stat-value" id="currentReb">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">AST</span>
+                        <span class="stat-value" id="currentAst">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">STL</span>
+                        <span class="stat-value" id="currentStl">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">BLK</span>
+                        <span class="stat-value" id="currentBlk">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">TO</span>
+                        <span class="stat-value" id="currentTO">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">PF</span>
+                        <span class="stat-value" id="currentPF">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">+/-</span>
+                        <span class="stat-value" id="currentPlusMinus">0</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/stats-tracking.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBBA Fullscreen Graphics</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/graphics.css">
+</head>
+<body class="graphics-body">
+    <!-- Graphics Container -->
+    <div class="graphics-container" id="graphicsContainer">
+        <!-- Player Stats Screen -->
+        <div class="graphic player-stats-graphic" id="playerStatsGraphic">
+            <div class="graphic-header">
+                <h2 class="graphic-title">Player Statistics</h2>
+            </div>
+            <div class="player-stats-content">
+                <div class="player-card">
+                    <div class="player-image">
+                        <img id="playerStatsImage" src="" alt="Player">
+                    </div>
+                    <div class="player-details">
+                        <div class="player-name" id="playerStatsName">Player Name</div>
+                        <div class="player-number" id="playerStatsNumber">#00</div>
+                        <div class="player-position" id="playerStatsPosition">Position</div>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">PTS</span>
+                        <span class="stat-value" id="statsPoints">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">REB</span>
+                        <span class="stat-value" id="statsRebounds">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">AST</span>
+                        <span class="stat-value" id="statsAssists">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">FG%</span>
+                        <span class="stat-value" id="statsFG">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">3P%</span>
+                        <span class="stat-value" id="stats3P">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">FT%</span>
+                        <span class="stat-value" id="statsFT">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Comparison Screen -->
+        <div class="graphic team-comparison-graphic" id="teamComparisonGraphic">
+            <div class="graphic-header">
+                <h2 class="graphic-title">Team Comparison</h2>
+            </div>
+            <div class="comparison-content">
+                <div class="comparison-team home-comparison">
+                    <div class="comparison-team-header">
+                        <img class="comparison-logo" id="homeComparisonLogo" src="" alt="Home">
+                        <h3 id="homeComparisonName">Home Team</h3>
+                    </div>
+                    <div class="comparison-stat">
+                        <span>FG%</span>
+                        <span id="homeComparisonFG">0%</span>
+                    </div>
+                    <div class="comparison-stat">
+                        <span>3PT%</span>
+                        <span id="homeComparison3P">0%</span>
+                    </div>
+                    <div class="comparison-stat">
+                        <span>Rebounds</span>
+                        <span id="homeComparisonReb">0</span>
+                    </div>
+                    <div class="comparison-stat">
+                        <span>Assists</span>
+                        <span id="homeComparisonAst">0</span>
+                    </div>
+                </div>
+
+                <div class="comparison-team away-comparison">
+                    <div class="comparison-team-header">
+                        <img class="comparison-logo" id="awayComparisonLogo" src="" alt="Away">
+                        <h3 id="awayComparisonName">Away Team</h3>
+                    </div>
+                    <div class="comparison-stat">
+                        <span>FG%</span>
+                        <span id="awayComparisonFG">0%</span>
+                    </div>
+                    <div class="comparison-stat">
+                        <span>3PT%</span>
+                        <span id="awayComparison3P">0%</span>
+                    </div>
+                    <div class="comparison-stat">
+                        <span>Rebounds</span>
+                        <span id="awayComparisonReb">0</span>
+                    </div>
+                    <div class="comparison-stat">
+                        <span>Assists</span>
+                        <span id="awayComparisonAst">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Scorers Screen -->
+        <div class="graphic top-scorers-graphic" id="topScorersGraphic">
+            <div class="graphic-header">
+                <h2 class="graphic-title">Top Scorers</h2>
+            </div>
+            <div class="top-scorers-list">
+                <div class="scorer-item">
+                    <div class="scorer-rank">1</div>
+                    <div class="scorer-info">
+                        <div class="scorer-name" id="scorer1Name">Player Name</div>
+                        <div class="scorer-team" id="scorer1Team">Team</div>
+                    </div>
+                    <div class="scorer-points" id="scorer1Points">0</div>
+                </div>
+                <div class="scorer-item">
+                    <div class="scorer-rank">2</div>
+                    <div class="scorer-info">
+                        <div class="scorer-name" id="scorer2Name">Player Name</div>
+                        <div class="scorer-team" id="scorer2Team">Team</div>
+                    </div>
+                    <div class="scorer-points" id="scorer2Points">0</div>
+                </div>
+                <div class="scorer-item">
+                    <div class="scorer-rank">3</div>
+                    <div class="scorer-info">
+                        <div class="scorer-name" id="scorer3Name">Player Name</div>
+                        <div class="scorer-team" id="scorer3Team">Team</div>
+                    </div>
+                    <div class="scorer-points" id="scorer3Points">0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halftime Screen -->
+        <div class="graphic halftime-graphic" id="halftimeGraphic">
+            <div class="halftime-header">HALFTIME</div>
+            <div class="halftime-content">
+                <div class="halftime-team home-halftime">
+                    <img class="halftime-logo" id="homeHalftimeLogo" src="" alt="Home">
+                    <h3 id="homeHalftimeName">Home Team</h3>
+                    <div class="halftime-score" id="homeHalftimeScore">0</div>
+                </div>
+                <div class="halftime-team away-halftime">
+                    <img class="halftime-logo" id="awayHalftimeLogo" src="" alt="Away">
+                    <h3 id="awayHalftimeName">Away Team</h3>
+                    <div class="halftime-score" id="awayHalftimeScore">0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Score Screen -->
+        <div class="graphic final-score-graphic" id="finalScoreGraphic">
+            <div class="final-header">FINAL SCORE</div>
+            <div class="final-content">
+                <div class="final-team home-final">
+                    <img class="final-logo" id="homeFinalLogo" src="" alt="Home">
+                    <h2 id="homeFinalName">Home Team</h2>
+                    <div class="final-score" id="homeFinalScore">0</div>
+                </div>
+                <div class="final-team away-final">
+                    <img class="final-logo" id="awayFinalLogo" src="" alt="Away">
+                    <h2 id="awayFinalName">Away Team</h2>
+                    <div class="final-score" id="awayFinalScore">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/graphics.js"></script>
+</body>
+</html>

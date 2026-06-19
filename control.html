@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBBA Broadcast Graphics - Control Panel</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/control-panel.css">
+</head>
+<body>
+    <div class="control-container">
+        <!-- Header -->
+        <header class="control-header">
+            <div class="header-left">
+                <h1 class="logo">NBBA Control Panel</h1>
+                <span class="game-title" id="gameTitle">Select a Game</span>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-secondary" id="dashboardBtn">← Dashboard</button>
+            </div>
+        </header>
+
+        <!-- Main Control Area -->
+        <main class="control-main">
+            <!-- Left Panel: Team & Score Control -->
+            <section class="control-section team-control">
+                <h2>Teams & Score</h2>
+                
+                <div class="team-row">
+                    <div class="team-editor home-team">
+                        <h3>Home Team</h3>
+                        <div class="form-group">
+                            <label>Team</label>
+                            <select id="homeTeamInput" class="form-control">
+                                <option value="">Select Team</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Logo</label>
+                            <div class="logo-preview" id="homeLogoPreview"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Primary Color</label>
+                            <input type="color" id="homePrimaryColor" class="form-control color-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Secondary Color</label>
+                            <input type="color" id="homeSecondaryColor" class="form-control color-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Score</label>
+                            <div class="score-controls">
+                                <button class="btn btn-sm" id="homeScoreMinus">−</button>
+                                <input type="number" id="homeScore" class="score-input" value="0" min="0">
+                                <button class="btn btn-sm" id="homeScorePlus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vs-divider">
+                        <span>VS</span>
+                    </div>
+
+                    <div class="team-editor away-team">
+                        <h3>Away Team</h3>
+                        <div class="form-group">
+                            <label>Team</label>
+                            <select id="awayTeamInput" class="form-control">
+                                <option value="">Select Team</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Logo</label>
+                            <div class="logo-preview" id="awayLogoPreview"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Primary Color</label>
+                            <input type="color" id="awayPrimaryColor" class="form-control color-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Secondary Color</label>
+                            <input type="color" id="awaySecondaryColor" class="form-control color-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Score</label>
+                            <div class="score-controls">
+                                <button class="btn btn-sm" id="awayScoreMinus">−</button>
+                                <input type="number" id="awayScore" class="score-input" value="0" min="0">
+                                <button class="btn btn-sm" id="awayScorePlus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Middle Panel: Game Clock & Shot Clock -->
+            <section class="control-section clock-control">
+                <h2>Clocks</h2>
+                
+                <div class="clock-section">
+                    <h3>Game Clock</h3>
+                    <div class="clock-display" id="gameClockDisplay">12:00</div>
+                    <div class="form-group">
+                        <label>Minutes</label>
+                        <input type="number" id="gameClockMinutes" class="form-control" value="12" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Seconds</label>
+                        <input type="number" id="gameClockSeconds" class="form-control" value="00" min="0" max="59">
+                    </div>
+                    <div class="clock-buttons">
+                        <button class="btn btn-secondary" id="gameClockStart">Start</button>
+                        <button class="btn btn-secondary" id="gameClockPause">Pause</button>
+                        <button class="btn btn-secondary" id="gameClockReset">Reset</button>
+                    </div>
+                </div>
+
+                <div class="clock-section">
+                    <h3>Shot Clock</h3>
+                    <div class="clock-display shot-clock" id="shotClockDisplay">24</div>
+                    <div class="form-group">
+                        <label>Duration</label>
+                        <select id="shotClockDuration" class="form-control">
+                            <option value="24">24 Seconds</option>
+                            <option value="14">14 Seconds</option>
+                        </select>
+                    </div>
+                    <div class="clock-buttons">
+                        <button class="btn btn-secondary" id="shotClockStart">Start</button>
+                        <button class="btn btn-secondary" id="shotClockPause">Pause</button>
+                        <button class="btn btn-secondary" id="shotClockReset">Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Game Status -->
+            <section class="control-section game-status">
+                <h2>Game Status</h2>
+                
+                <div class="form-group">
+                    <label>Quarter</label>
+                    <select id="quarterInput" class="form-control">
+                        <option value="1">Q1</option>
+                        <option value="2">Q2</option>
+                        <option value="3">Q3</option>
+                        <option value="4">Q4</option>
+                        <option value="5">OT</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Possession</label>
+                    <select id="possessionInput" class="form-control">
+                        <option value="none">None</option>
+                        <option value="home">Home</option>
+                        <option value="away">Away</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Home Timeouts</label>
+                    <div class="score-controls">
+                        <button class="btn btn-sm" id="homeTimeoutMinus">−</button>
+                        <input type="number" id="homeTimeouts" class="score-input" value="3" min="0" max="3">
+                        <button class="btn btn-sm" id="homeTimeoutPlus">+</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Away Timeouts</label>
+                    <div class="score-controls">
+                        <button class="btn btn-sm" id="awayTimeoutMinus">−</button>
+                        <input type="number" id="awayTimeouts" class="score-input" value="3" min="0" max="3">
+                        <button class="btn btn-sm" id="awayTimeoutPlus">+</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Home Bonus</label>
+                    <select id="homeBonusInput" class="form-control">
+                        <option value="none">None</option>
+                        <option value="one-and-one">1 & 1</option>
+                        <option value="double-bonus">Double Bonus</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Away Bonus</label>
+                    <select id="awayBonusInput" class="form-control">
+                        <option value="none">None</option>
+                        <option value="one-and-one">1 & 1</option>
+                        <option value="double-bonus">Double Bonus</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Series Score (Home-Away)</label>
+                    <div class="score-controls">
+                        <input type="number" id="seriesHome" class="score-input" value="0" min="0">
+                        <span>-</span>
+                        <input type="number" id="seriesAway" class="score-input" value="0" min="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>LIVE Status</label>
+                    <select id="liveStatus" class="form-control">
+                        <option value="off">OFF</option>
+                        <option value="on">LIVE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Overtime</label>
+                    <select id="overtimeStatus" class="form-control">
+                        <option value="off">OFF</option>
+                        <option value="on">ON</option>
+                    </select>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Panel: Graphics & Actions -->
+        <section class="control-section graphics-control">
+            <h2>Graphics & Overlays</h2>
+            <div class="graphics-buttons">
+                <button class="btn btn-primary" id="showScoreBug">Show Scorebug</button>
+                <button class="btn btn-primary" id="hideScoreBug">Hide Scorebug</button>
+                <button class="btn btn-info" id="showLowerThird">Lower Third</button>
+                <button class="btn btn-info" id="showHalftime">Halftime Stats</button>
+                <button class="btn btn-info" id="showFinalScore">Final Score</button>
+                <button class="btn btn-info" id="showBoxScore">Live Box Score</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/clocks.js"></script>
+    <script src="js/control-panel.js"></script>
+</body>
+</html>

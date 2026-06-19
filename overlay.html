@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBBA Scorebug Overlay</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/overlay.css">
+</head>
+<body class="overlay-body">
+    <!-- Scorebug Container -->
+    <div class="scorebug-container" id="scorebugContainer">
+        <div class="scorebug" id="scorebug">
+            <!-- Left Team -->
+            <div class="team-section home-team">
+                <div class="team-logo">
+                    <img id="homeLogoImg" src="" alt="Home Team Logo" class="logo-img">
+                </div>
+                <div class="team-info">
+                    <div class="team-abbr" id="homeAbbr">HOM</div>
+                    <div class="team-score" id="homeScoreDisplay">0</div>
+                </div>
+            </div>
+
+            <!-- Center Info -->
+            <div class="center-info">
+                <div class="clock-section">
+                    <div class="game-clock" id="gameClockDisplay">12:00</div>
+                    <div class="quarter-badge" id="quarterBadge">Q1</div>
+                </div>
+                <div class="game-indicators">
+                    <div class="indicator-row">
+                        <span class="shot-clock" id="shotClockDisplay">24</span>
+                        <span class="live-badge" id="liveBadge">LIVE</span>
+                    </div>
+                    <div class="possession-arrow" id="possessionArrow"></div>
+                </div>
+            </div>
+
+            <!-- Right Team -->
+            <div class="team-section away-team">
+                <div class="team-info">
+                    <div class="team-abbr" id="awayAbbr">AWY</div>
+                    <div class="team-score" id="awayScoreDisplay">0</div>
+                </div>
+                <div class="team-logo">
+                    <img id="awayLogoImg" src="" alt="Away Team Logo" class="logo-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="scorebug-bottom-bar">
+            <div class="bottom-left">
+                <div class="timeouts-display">
+                    <span id="homeTimeoutsDisplay" class="timeouts home-timeouts">●●●</span>
+                    <span id="awayTimeoutsDisplay" class="timeouts away-timeouts">●●●</span>
+                </div>
+            </div>
+            <div class="bottom-center">
+                <div class="sponsor-logo" id="sponsorLogo"></div>
+            </div>
+            <div class="bottom-right">
+                <div class="series-score" id="seriesScore"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/overlay.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBBA Live Box Score</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/boxscore.css">
+</head>
+<body>
+    <div class="boxscore-container">
+        <!-- Header -->
+        <header class="boxscore-header">
+            <h1>Live Box Score</h1>
+            <div class="header-actions">
+                <button class="btn btn-secondary" id="backBtn">← Back</button>
+                <button class="btn btn-primary" id="printBtn">Print</button>
+                <button class="btn btn-primary" id="exportBtn">Export</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="boxscore-main">
+            <!-- Team Tabs -->
+            <div class="team-tabs">
+                <button class="tab-btn active" data-team="home" id="homeTabBtn">Home Team</button>
+                <button class="tab-btn" data-team="away" id="awayTabBtn">Away Team</button>
+            </div>
+
+            <!-- Home Team Box Score -->
+            <div class="team-boxscore active" id="homeBoxscore">
+                <table class="boxscore-table">
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Min</th>
+                            <th>FG</th>
+                            <th>3P</th>
+                            <th>FT</th>
+                            <th>Reb</th>
+                            <th>Ast</th>
+                            <th>Stl</th>
+                            <th>Blk</th>
+                            <th>TO</th>
+                            <th>PF</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="homeBoxscoreBody">
+                        <!-- Players will be populated here -->
+                    </tbody>
+                    <tfoot>
+                        <tr class="totals-row">
+                            <td><strong>TEAM TOTALS</strong></td>
+                            <td id="homeMinsTotals">-</td>
+                            <td id="homeFGTotals">0/0</td>
+                            <td id="home3PTotals">0/0</td>
+                            <td id="homeFTTotals">0/0</td>
+                            <td id="homeRebTotals">0</td>
+                            <td id="homeAstTotals">0</td>
+                            <td id="homeStlTotals">0</td>
+                            <td id="homeBlkTotals">0</td>
+                            <td id="homeTOTotals">0</td>
+                            <td id="homePFTotals">0</td>
+                            <td id="homePtsTotals">0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- Away Team Box Score -->
+            <div class="team-boxscore" id="awayBoxscore">
+                <table class="boxscore-table">
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Min</th>
+                            <th>FG</th>
+                            <th>3P</th>
+                            <th>FT</th>
+                            <th>Reb</th>
+                            <th>Ast</th>
+                            <th>Stl</th>
+                            <th>Blk</th>
+                            <th>TO</th>
+                            <th>PF</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="awayBoxscoreBody">
+                        <!-- Players will be populated here -->
+                    </tbody>
+                    <tfoot>
+                        <tr class="totals-row">
+                            <td><strong>TEAM TOTALS</strong></td>
+                            <td id="awayMinsTotals">-</td>
+                            <td id="awayFGTotals">0/0</td>
+                            <td id="away3PTotals">0/0</td>
+                            <td id="awayFTTotals">0/0</td>
+                            <td id="awayRebTotals">0</td>
+                            <td id="awayAstTotals">0</td>
+                            <td id="awayStlTotals">0</td>
+                            <td id="awayBlkTotals">0</td>
+                            <td id="awayTOTotals">0</td>
+                            <td id="awayPFTotals">0</td>
+                            <td id="awayPtsTotals">0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/boxscore.js"></script>
+</body>
+</html>

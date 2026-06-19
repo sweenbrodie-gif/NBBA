@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBBA Settings</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/settings.css">
+</head>
+<body>
+    <div class="settings-container">
+        <!-- Header -->
+        <header class="settings-header">
+            <h1>Broadcast Settings</h1>
+            <button class="btn btn-secondary" id="backBtn">← Back</button>
+        </header>
+
+        <!-- Settings Tabs -->
+        <main class="settings-main">
+            <div class="settings-tabs">
+                <button class="tab-btn active" data-tab="appearance">Appearance</button>
+                <button class="tab-btn" data-tab="branding">Branding</button>
+                <button class="tab-btn" data-tab="graphics">Graphics</button>
+                <button class="tab-btn" data-tab="advanced">Advanced</button>
+            </div>
+
+            <!-- Appearance Tab -->
+            <section class="tab-content active" id="appearanceTab">
+                <h2>Appearance Settings</h2>
+                <div class="settings-group">
+                    <div class="form-group">
+                        <label>Theme</label>
+                        <select id="themeSelect" class="form-control">
+                            <option value="light">Light Mode</option>
+                            <option value="dark">Dark Mode</option>
+                            <option value="auto">Auto (System)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Primary Accent Color</label>
+                        <input type="color" id="accentColor" class="form-control color-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Animation Speed</label>
+                        <select id="animationSpeed" class="form-control">
+                            <option value="slow">Slow</option>
+                            <option value="normal" selected>Normal</option>
+                            <option value="fast">Fast</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Branding Tab -->
+            <section class="tab-content" id="brandingTab">
+                <h2>Branding Settings</h2>
+                <div class="settings-group">
+                    <div class="form-group">
+                        <label>League Logo</label>
+                        <input type="file" id="leagueLogo" class="form-control" accept="image/*">
+                        <div class="logo-preview" id="leagueLogoPreview"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Finals Branding Logo</label>
+                        <input type="file" id="finalsBranding" class="form-control" accept="image/*">
+                        <div class="logo-preview" id="finalsBrandingPreview"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Sponsor Logo</label>
+                        <input type="file" id="sponsorLogo" class="form-control" accept="image/*">
+                        <div class="logo-preview" id="sponsorLogoPreview"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Graphics Tab -->
+            <section class="tab-content" id="graphicsTab">
+                <h2>Graphics Settings</h2>
+                <div class="settings-group">
+                    <div class="form-group">
+                        <label>Broadcast Resolution</label>
+                        <select id="broadcastResolution" class="form-control">
+                            <option value="1920x1080">1920x1080 (Full HD)</option>
+                            <option value="1280x720">1280x720 (HD)</option>
+                            <option value="3840x2160">3840x2160 (4K)</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="customResolutionGroup" style="display:none;">
+                        <label>Custom Resolution</label>
+                        <div class="resolution-input-group">
+                            <input type="number" id="customWidth" class="form-control" placeholder="Width" min="640">
+                            <span>x</span>
+                            <input type="number" id="customHeight" class="form-control" placeholder="Height" min="480">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Scorebug Position</label>
+                        <select id="scorebugPosition" class="form-control">
+                            <option value="top-left">Top Left</option>
+                            <option value="top-center">Top Center</option>
+                            <option value="top-right">Top Right</option>
+                            <option value="center">Center</option>
+                            <option value="bottom-left">Bottom Left</option>
+                            <option value="bottom-center">Bottom Center</option>
+                            <option value="bottom-right">Bottom Right</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Scorebug Scale (%)</label>
+                        <input type="range" id="scorebugScale" class="form-control" min="50" max="150" value="100" step="10">
+                        <span id="scorebugScaleDisplay">100%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Tab -->
+            <section class="tab-content" id="advancedTab">
+                <h2>Advanced Settings</h2>
+                <div class="settings-group">
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="autoSave" checked>
+                            Auto Save Changes
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="enableKeyboardShortcuts" checked>
+                            Enable Keyboard Shortcuts
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="enableOfflineMode" checked>
+                            Enable Offline Mode
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-secondary" id="exportSettingsBtn">Export Settings</button>
+                        <button class="btn btn-secondary" id="importSettingsBtn">Import Settings</button>
+                        <input type="file" id="importSettingsFile" class="form-control" accept=".json" style="display:none;">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-warning" id="resetSettingsBtn">Reset to Defaults</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="settings-footer">
+            <button class="btn btn-secondary" id="cancelSettingsBtn">Cancel</button>
+            <button class="btn btn-primary" id="saveSettingsBtn">Save Settings</button>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

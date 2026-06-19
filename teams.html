@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBBA Team Management</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/teams.css">
+</head>
+<body>
+    <div class="teams-container">
+        <!-- Header -->
+        <header class="teams-header">
+            <h1>Team Management</h1>
+            <button class="btn btn-primary" id="newTeamBtn">+ New Team</button>
+        </header>
+
+        <!-- Teams Grid -->
+        <main class="teams-main">
+            <div class="teams-grid" id="teamsGrid">
+                <!-- Teams will be populated here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Team Editor Modal -->
+    <div class="modal" id="teamModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="teamModalTitle">New Team</h3>
+                <button class="close-btn" id="closeTeamModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Team Name</label>
+                    <input type="text" id="teamName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Abbreviation</label>
+                    <input type="text" id="teamAbbr" class="form-control" maxlength="3">
+                </div>
+                <div class="form-group">
+                    <label>Division</label>
+                    <input type="text" id="teamDivision" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Coach</label>
+                    <input type="text" id="teamCoach" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Primary Color</label>
+                    <input type="color" id="teamPrimaryColor" class="form-control color-input">
+                </div>
+                <div class="form-group">
+                    <label>Secondary Color</label>
+                    <input type="color" id="teamSecondaryColor" class="form-control color-input">
+                </div>
+                <div class="form-group">
+                    <label>Logo</label>
+                    <input type="file" id="teamLogo" class="form-control" accept="image/*">
+                    <div class="logo-preview-upload" id="teamLogoPreview"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelTeamBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveTeamBtn">Save Team</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/teams.js"></script>
+</body>
+</html>

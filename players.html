@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBBA Player Management</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/players.css">
+</head>
+<body>
+    <div class="players-container">
+        <!-- Header -->
+        <header class="players-header">
+            <h1>Player Management</h1>
+            <div class="header-controls">
+                <select id="teamFilter" class="form-control">
+                    <option value="">All Teams</option>
+                </select>
+                <input type="text" id="playerSearch" class="form-control" placeholder="Search players...">
+                <button class="btn btn-primary" id="newPlayerBtn">+ New Player</button>
+            </div>
+        </header>
+
+        <!-- Players Table -->
+        <main class="players-main">
+            <table class="players-table">
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>Name</th>
+                        <th>#</th>
+                        <th>Position</th>
+                        <th>Team</th>
+                        <th>Height</th>
+                        <th>Weight</th>
+                        <th>Age</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="playersTableBody">
+                    <!-- Players will be populated here -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <!-- Player Editor Modal -->
+    <div class="modal" id="playerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="playerModalTitle">New Player</h3>
+                <button class="close-btn" id="closePlayerModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Photo</label>
+                    <input type="file" id="playerPhoto" class="form-control" accept="image/*">
+                    <div class="photo-preview" id="playerPhotoPreview"></div>
+                </div>
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" id="playerFirstName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" id="playerLastName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Jersey Number</label>
+                    <input type="number" id="playerNumber" class="form-control" min="0" max="99">
+                </div>
+                <div class="form-group">
+                    <label>Position</label>
+                    <select id="playerPosition" class="form-control">
+                        <option value="">Select Position</option>
+                        <option value="PG">Point Guard</option>
+                        <option value="SG">Shooting Guard</option>
+                        <option value="SF">Small Forward</option>
+                        <option value="PF">Power Forward</option>
+                        <option value="C">Center</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Team</label>
+                    <select id="playerTeam" class="form-control">
+                        <option value="">Select Team</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Height (cm)</label>
+                    <input type="number" id="playerHeight" class="form-control" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Weight (kg)</label>
+                    <input type="number" id="playerWeight" class="form-control" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="number" id="playerAge" class="form-control" min="0" max="60">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelPlayerBtn">Cancel</button>
+                <button class="btn btn-danger" id="deletePlayerBtn" style="display:none;">Delete</button>
+                <button class="btn btn-primary" id="savePlayerBtn">Save Player</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/players.js"></script>
+</body>
+</html>

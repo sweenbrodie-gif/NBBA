@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBBA Broadcast Graphics - Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1 class="logo">NBBA</h1>
+                <span class="subtitle">Broadcast Graphics System</span>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-secondary" id="settingsBtn">Settings</button>
+                <button class="btn btn-danger" id="logoutBtn">Logout</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Active Games</h2>
+                    <button class="btn btn-primary" id="newGameBtn">+ New Game</button>
+                </div>
+                <div class="games-grid" id="gamesGrid">
+                    <!-- Games will be populated here -->
+                </div>
+            </section>
+
+            <!-- Game History Section -->
+            <section class="history-section">
+                <div class="section-header">
+                    <h2>Game History</h2>
+                </div>
+                <div class="history-list" id="historyList">
+                    <!-- History will be populated here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- New Game Modal -->
+    <div class="modal" id="newGameModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Game</h3>
+                <button class="close-btn" id="closeNewGameModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="homeTeamSelect">Home Team</label>
+                    <select id="homeTeamSelect" class="form-control">
+                        <option value="">Select Home Team</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="awayTeamSelect">Away Team</label>
+                    <select id="awayTeamSelect" class="form-control">
+                        <option value="">Select Away Team</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="gameDate">Game Date & Time</label>
+                    <input type="datetime-local" id="gameDate" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="seriesNumber">Game Number in Series</label>
+                    <input type="number" id="seriesNumber" class="form-control" value="1" min="1">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelNewGameBtn">Cancel</button>
+                <button class="btn btn-primary" id="createGameBtn">Create Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

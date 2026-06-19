@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBBA Halftime Analysis</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/halftime.css">
+</head>
+<body class="halftime-body">
+    <!-- Halftime Container -->
+    <div class="halftime-container" id="halftimeContainer">
+        <!-- Halftime Stats Comparison -->
+        <div class="halftime-screen halftime-stats" id="halftimeStats">
+            <div class="halftime-title">HALFTIME ANALYSIS</div>
+            <div class="halftime-stats-grid">
+                <!-- Home Team Stats -->
+                <div class="halftime-team-stats home-stats">
+                    <div class="halftime-team-header">
+                        <img class="halftime-team-logo" id="halftimeHomeLogoStats" src="" alt="Home">
+                        <h2 id="halftimeHomeNameStats">HOME</h2>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">Points</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="homePointsBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeHomePoints">0</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">FG%</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="homeFGBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeHomeFG">0%</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">3P%</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="home3PBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeHome3P">0%</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">Rebounds</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="homeReboundsBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeHomeRebounds">0</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">Assists</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="homeAssistsBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeHomeAssists">0</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">Turnovers</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="homeTurnoversBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeHomeTurnovers">0</span>
+                    </div>
+                </div>
+
+                <!-- Away Team Stats -->
+                <div class="halftime-team-stats away-stats">
+                    <div class="halftime-team-header">
+                        <img class="halftime-team-logo" id="halftimeAwayLogoStats" src="" alt="Away">
+                        <h2 id="halftimeAwayNameStats">AWAY</h2>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">Points</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="awayPointsBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeAwayPoints">0</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">FG%</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="awayFGBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeAwayFG">0%</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">3P%</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="away3PBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeAway3P">0%</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">Rebounds</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="awayReboundsBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeAwayRebounds">0</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">Assists</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="awayAssistsBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeAwayAssists">0</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">Turnovers</span>
+                        <span class="stat-bar">
+                            <span class="bar-fill" id="awayTurnoversBar"></span>
+                        </span>
+                        <span class="stat-value" id="halftimeAwayTurnovers">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halftime Top Performers -->
+        <div class="halftime-screen halftime-performers" id="halftimePerformers">
+            <div class="halftime-title">TOP PERFORMERS - FIRST HALF</div>
+            <div class="performers-grid">
+                <div class="performer-card">
+                    <div class="performer-header">LEADING SCORER</div>
+                    <img class="performer-image" id="topScorerImage" src="" alt="Player">
+                    <div class="performer-name" id="topScorerName">Player Name</div>
+                    <div class="performer-team" id="topScorerTeam">Team</div>
+                    <div class="performer-stat" id="topScorerPoints">0 PTS</div>
+                </div>
+                <div class="performer-card">
+                    <div class="performer-header">LEADING REBOUNDER</div>
+                    <img class="performer-image" id="topRebounderImage" src="" alt="Player">
+                    <div class="performer-name" id="topRebounderName">Player Name</div>
+                    <div class="performer-team" id="topRebounderTeam">Team</div>
+                    <div class="performer-stat" id="topRebounderReb">0 REB</div>
+                </div>
+                <div class="performer-card">
+                    <div class="performer-header">LEADING PASSER</div>
+                    <img class="performer-image" id="topAssisterImage" src="" alt="Player">
+                    <div class="performer-name" id="topAssisterName">Player Name</div>
+                    <div class="performer-team" id="topAssisterTeam">Team</div>
+                    <div class="performer-stat" id="topAssisterAst">0 AST</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/halftime.js"></script>
+</body>
+</html>

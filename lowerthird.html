@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBBA Lower Third</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/lowerthird.css">
+</head>
+<body class="lowerthird-body">
+    <!-- Lower Third Container -->
+    <div class="lower-third-container" id="lowerThirdContainer">
+        <!-- Player Introduction -->
+        <div class="lower-third player-intro" id="playerIntro">
+            <div class="player-intro-content">
+                <div class="player-intro-image">
+                    <img id="playerIntroImage" src="" alt="Player">
+                </div>
+                <div class="player-intro-text">
+                    <div class="player-number-large" id="playerIntroNumber">#00</div>
+                    <div class="player-name-large" id="playerIntroName">PLAYER NAME</div>
+                    <div class="player-info-small">
+                        <span id="playerIntroPosition">Position</span>
+                        <span id="playerIntroTeam">Team</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Starting Lineup -->
+        <div class="lower-third starting-lineup" id="startingLineup">
+            <div class="lineup-header">STARTING LINEUP</div>
+            <div class="lineup-grid">
+                <div class="lineup-player">
+                    <img class="lineup-image" id="lineup1Image" src="" alt="Player">
+                    <div class="lineup-number" id="lineup1Number">00</div>
+                    <div class="lineup-name" id="lineup1Name">Name</div>
+                </div>
+                <div class="lineup-player">
+                    <img class="lineup-image" id="lineup2Image" src="" alt="Player">
+                    <div class="lineup-number" id="lineup2Number">00</div>
+                    <div class="lineup-name" id="lineup2Name">Name</div>
+                </div>
+                <div class="lineup-player">
+                    <img class="lineup-image" id="lineup3Image" src="" alt="Player">
+                    <div class="lineup-number" id="lineup3Number">00</div>
+                    <div class="lineup-name" id="lineup3Name">Name</div>
+                </div>
+                <div class="lineup-player">
+                    <img class="lineup-image" id="lineup4Image" src="" alt="Player">
+                    <div class="lineup-number" id="lineup4Number">00</div>
+                    <div class="lineup-name" id="lineup4Name">Name</div>
+                </div>
+                <div class="lineup-player">
+                    <img class="lineup-image" id="lineup5Image" src="" alt="Player">
+                    <div class="lineup-number" id="lineup5Number">00</div>
+                    <div class="lineup-name" id="lineup5Name">Name</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/lowerthird.js"></script>
+</body>
+</html>
